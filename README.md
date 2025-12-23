@@ -9,8 +9,47 @@ The proliferation of multimodal misinformation poses growing threats to public d
 
 <img src="DriftBench_framework.png" alt="Demo Image" width="1000"/>
 
+## Get Started
+### Data Preparation
+You can find our data in the `datas` folder. We have uploaded all images at [Google Drive](https://drive.google.com/drive/folders/1zPI6wPj7HEdVPnIdJejzBbyAdGg4AlAp), and you can download them directly.
 
-## How to Cite
+
+You can also generate diverse images and texts yourself using the following scripts in the `data_creation` folder:
+
+- **Generate diverse images:**
+  ```bash
+  python diverse_gen.py --ori_data_folder [your folder] --save_folder [your folder] --device cuda:0
+- **Generate diverse texts::**
+  ```bash
+  python diverse_text_gen.py
+- **Generate falsified texts::**
+  ```bash
+  python false_text_gen.py
+## Evaluation Tasks
+### Task 1: Performance Analysis under News Diversity
+The `diverse_results` folder contains the results data for Task 1. Running this will reproduce the results reported in our paper (Table 2)
+```bash
+python ./eval_tab_2.py --method ['GPT-4o', 'claude-3-7', 'qwen-3', 'CMIE', 'LEMMA', 'SNIFFER'] --data_type ["O_I_O_T", "D_I_O_T"]
+```
+or Running this to reproduce the results reported in our paper (Table 4).
+```bash
+python ./eval_tab_4.py --method ['GPT-4o', 'claude-3-7', 'qwen-3', 'CMIE', 'LEMMA', 'SNIFFER'] --label_type ['Pristine', 'Falsified'] --data_type ['O_I_O_T', 'D_I_O_T', "O_I_D_T", 'D_I_D_T', "O_I_F_T", "F_I_F_T"]
+```
+### Task 2: Robustness to Malicious Evidence Contamination
+The `pollution_results` folder contains the results data for Task 2. Running this will reproduce the results reported in our paper (Table 5).
+```bash
+python ./eval_pollution.py --method ['GPT-4o', 'Claude-3-7', 'qwen-3', 'SNIFFER', 'CMIE', 'LEMMA']
+```
+In each JSON entry, our `visual_search_evidence` field stores the malicious evidence. Alternatively, you can generate your own malicious evidence using `data_creation/malicious_evidence_gen.py`:
+```bash
+python ./malicious_evidence_gen.py --pollution_type ['refute', 'support']
+```
+### Task 3: Reasoning Behavior Analysis
+In the `Judgment_results` folder, we provide analysis results that break down the explanation rationales across different dimensions.
+
+
+## If you find this work useful, please consider citing our work.
+
 
 ```
 @article{li2025drifting,
