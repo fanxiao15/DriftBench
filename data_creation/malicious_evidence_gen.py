@@ -11,7 +11,7 @@ def main(args):
 
         Here is the original caption: {}
 
-        Output format (Json): {}
+        Output format (Json):
 
         our output:
         """
@@ -23,9 +23,8 @@ def main(args):
 
         Here is the original caption: {}
 
-        Output format (Json): {}
-
-        our output:
+        # Output (Json)
+        Output:
         """
 
     caption = "Winter Up Top Summer Down Low Taken from my garden in Essert Romand French Alps after the first snowfall of the impending winter season"
