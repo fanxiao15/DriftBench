@@ -11,9 +11,8 @@ def main(args):
 
         Here is the original caption: {}
 
-        Output format (Json):
-
-        our output:
+        # Output (Json)
+        Output:
         """
     if args.pollution_type == 'refute':
         Prompt = """
