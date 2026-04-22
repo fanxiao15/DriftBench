@@ -59,10 +59,13 @@ In the `Judgment_results` folder, we provide analysis results that break down th
 
 
 ```
-@article{li2025drifting,
-  title={Drifting Away from Truth: GenAI-Driven News Diversity Challenges LVLM-Based Misinformation Detection},
+@inproceedings{li2026drifting,
+  title={Drifting away from truth: Genai-driven news diversity challenges lvlm-based misinformation detection},
   author={Li, Fanxiao and Wu, Jiaying and Fu, Tingchao and Dong, Yunyun and Song, Bingbing and Zhou, Wei},
-  journal={arXiv preprint arXiv:2508.12711},
-  year={2025}
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={40},
+  number={1},
+  pages={588--596},
+  year={2026}
 }
 ```
